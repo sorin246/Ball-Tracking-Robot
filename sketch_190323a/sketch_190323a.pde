@@ -1,6 +1,5 @@
 import processing.io.*;
 import gohai.glvideo.*;
-import RPi.GPIO as G;
 GLCapture video;
 color trackColor;
 void setup(){
@@ -9,10 +8,10 @@ void setup(){
     video.start();
 
     trackColor = color(255, 0, 255);
-    G.pinMode(4, G.OUTPUT);
-    G.pinMode(14, G.OUTPUT);
-    G.pinMode(17, G.OUTPUT);
-    G.pinMode(18, G.OUTPUT);
+    GPIO.pinMode(4, GPIO.OUTPUT);
+    GPIO.pinMode(14, GPIO.OUTPUT);
+    GPIO.pinMode(17, GPIO.OUTPUT);
+    GPIO.pinMode(18, GPIO.OUTPUT);
 }
 void draw(){
     background(0);
@@ -55,50 +54,50 @@ void draw(){
 
         if (closestX < 140)
         {
-            G.digitalWrite(4, G.HIGH);
-            G.digitalWrite(14, G.HIGH);
-            G.digitalWrite(17, G.HIGH);
-            G.digitalWrite(18, G.LOW);
+            GPIO.digitalWrite(4, GPIO.HIGH);
+            GPIO.digitalWrite(14, GPIO.HIGH);
+            GPIO.digitalWrite(17, GPIO.HIGH);
+            GPIO.digitalWrite(18, GPIO.LOW);
             delay(10);
-            G.digitalWrite(4, G.HIGH);
-            G.digitalWrite(14, G.HIGH);
-            G.digitalWrite(17, G.HIGH);
-            G.digitalWrite(18, G.HIGH);
+            GPIO.digitalWrite(4, GPIO.HIGH);
+            GPIO.digitalWrite(14, GPIO.HIGH);
+            GPIO.digitalWrite(17, GPIO.HIGH);
+            GPIO.digitalWrite(18, GPIO.HIGH);
 
             println("Turn Right");
         }
         else if (closestX > 200)
         {
-            G.digitalWrite(4, G.HIGH);
-            G.digitalWrite(14, G.LOW);
-            G.digitalWrite(17, G.HIGH);
-            G.digitalWrite(18, G.HIGH);
+            GPIO.digitalWrite(4, GPIO.HIGH);
+            GPIO.digitalWrite(14, GPIO.LOW);
+            GPIO.digitalWrite(17, GPIO.HIGH);
+            GPIO.digitalWrite(18, GPIO.HIGH);
             delay(10);
-            G.digitalWrite(4, G.HIGH);
-            G.digitalWrite(14, G.HIGH);
-            G.digitalWrite(17, G.HIGH);
-            G.digitalWrite(18, G.HIGH);
+            GPIO.digitalWrite(4, GPIO.HIGH);
+            GPIO.digitalWrite(14, GPIO.HIGH);
+            GPIO.digitalWrite(17, GPIO.HIGH);
+            GPIO.digitalWrite(18, GPIO.HIGH);
             println("Turn Left");
             
       else if (closestY < 170)
       {
-            G.digitalWrite(4, G.HIGH);
-            G.digitalWrite(14, G.LOW);
-            G.digitalWrite(17, G.HIGH);
-            G.digitalWrite(18, G.HIGH);
+            GPIO.digitalWrite(4, GPIO.HIGH);
+            GPIO.digitalWrite(14, GPIO.LOW);
+            GPIO.digitalWrite(17, GPIO.HIGH);
+            GPIO.digitalWrite(18, GPIO.HIGH);
             delay(10);
-            G.digitalWrite(4, G.HIGH);
-            G.digitalWrite(14, G.HIGH);
-            G.digitalWrite(17, G.HIGH);
-            G.digitalWrite(18, G.HIGH);
+            GPIO.digitalWrite(4, GPIO.HIGH);
+            GPIO.digitalWrite(14, GPIO.HIGH);
+            GPIO.digitalWrite(17, GPIO.HIGH);
+            GPIO.digitalWrite(18, GPIO.HIGH);
             println("GO Frwd");
       }
         else
         {
-         G.digitalWrite(4, G.HIGH);
-         G.digitalWrite(14, G.HIGH);
-         G.digitalWrite(17, G.HIGH);
-         G.digotalWrite(18, G.HIGH);
+         GPIO.digitalWrite(4, GPIO.HIGH);
+         GPIO.digitalWrite(14, GPIO.HIGH);
+         GPIO.digitalWrite(17, GPIO.HIGH);
+         GPIO.digotalWrite(18, GPIO.HIGH);
         }
         }
         
