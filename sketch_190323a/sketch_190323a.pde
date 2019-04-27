@@ -77,7 +77,7 @@ void draw(){
             GPIO.digitalWrite(14, GPIO.HIGH);
             GPIO.digitalWrite(17, GPIO.HIGH);
             GPIO.digitalWrite(18, GPIO.HIGH);
-            println("Turn Left");
+            println("Turn Left")}
             
       else if (closestY < 170)
       {
