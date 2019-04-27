@@ -15,10 +15,10 @@ void setup(){
 }
 void draw(){
     background(0);
-    if (video.availible()){
+    if (video.available()){
         video.read();
 }
-    video.loadPixels;
+    video.loadPixels();
     image(video, 0, 0);
 
     float worldRecord = 500;
@@ -98,7 +98,16 @@ void draw(){
          GPIO.digitalWrite(4, GPIO.HIGH);
          GPIO.digitalWrite(14, GPIO.HIGH);
          GPIO.digitalWrite(17, GPIO.HIGH);
-         GPIO.digotalWrite(18, GPIO.HIGH);
+         GPIO.digitalWrite(18, GPIO.HIGH);
+        }
+        }
+        
+        else
+        {
+         GPIO.digitalWrite(4, GPIO.HIGH);
+         GPIO.digitalWrite(14, GPIO.HIGH);
+         GPIO.digitalWrite(17, GPIO.HIGH);
+         GPIO.digitalWrite(18, GPIO.HIGH);
         }
         }
         
