@@ -7,7 +7,7 @@ void setup(){
     video = new GLCapture(this);
     video.start();
 
-    trackColor = color(255, 0, 255);
+    trackColor = color(122  ,152 ,43);
     GPIO.pinMode(4, GPIO.OUTPUT);
     GPIO.pinMode(14, GPIO.OUTPUT);
     GPIO.pinMode(17, GPIO.OUTPUT);
@@ -58,7 +58,7 @@ void draw(){
             GPIO.digitalWrite(14, GPIO.HIGH);
             GPIO.digitalWrite(17, GPIO.HIGH);
             GPIO.digitalWrite(18, GPIO.LOW);
-            delay(10);
+            delay(500);
             GPIO.digitalWrite(4, GPIO.HIGH);
             GPIO.digitalWrite(14, GPIO.HIGH);
             GPIO.digitalWrite(17, GPIO.HIGH);
@@ -72,7 +72,7 @@ void draw(){
             GPIO.digitalWrite(14, GPIO.LOW);
             GPIO.digitalWrite(17, GPIO.HIGH);
             GPIO.digitalWrite(18, GPIO.HIGH);
-            delay(10);
+            delay(500);
             GPIO.digitalWrite(4, GPIO.HIGH);
             GPIO.digitalWrite(14, GPIO.HIGH);
             GPIO.digitalWrite(17, GPIO.HIGH);
@@ -85,8 +85,8 @@ void draw(){
             GPIO.digitalWrite(4, GPIO.HIGH);
             GPIO.digitalWrite(14, GPIO.LOW);
             GPIO.digitalWrite(17, GPIO.HIGH);
-            GPIO.digitalWrite(18, GPIO.HIGH);
-            delay(10);
+            GPIO.digitalWrite(18, GPIO.LOW);
+            delay(500);
             GPIO.digitalWrite(4, GPIO.HIGH);
             GPIO.digitalWrite(14, GPIO.HIGH);
             GPIO.digitalWrite(17, GPIO.HIGH);
@@ -112,6 +112,10 @@ void draw(){
         }
         
         void mousePressed(){
-          int loc = mouseX = mouseY * video.width;
+          int loc = mouseX + mouseY * video.width;
           trackColor = video.pixels[loc];
+            float r2 = red (trackColor);
+            float g2 = green(trackColor);
+            float b2 = blue (trackColor);
+            println(r2, g2, b2);
         }
