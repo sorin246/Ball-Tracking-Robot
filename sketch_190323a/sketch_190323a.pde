@@ -45,7 +45,7 @@ void draw(){
             }
         }
     }
-    if (worldRecord < 10){
+    if (worldRecord < 16){
         fill(trackColor);
         strokeWeight(4.0);
         stroke(0);
@@ -101,7 +101,10 @@ void draw(){
          GPIO.digitalWrite(18, GPIO.HIGH);
         }
         }
-        
+       else if
+       {
+         worldRecord < 95;
+         //still figuring out how to code for a ratio
         else
         {
          GPIO.digitalWrite(4, GPIO.HIGH);
